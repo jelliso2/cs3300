@@ -61,3 +61,14 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 end
+
+require 'simplecov'
+SimpleCov.start 'rails' do
+  add_filter '/bin/'
+  add_filter '/db/'
+  add_filter '/spec/' # for rspec
+  add_filter '/app/channels/application_cable'
+  add_filter '/app/jobs'
+  #add_filter '/app/mailers'
+  add_filter '/app/helper'
+end
