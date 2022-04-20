@@ -78,8 +78,15 @@ group :development, :test do
   gem 'capybara','>= 2.15'
 end
 
+gem 'devise'
 
+group :development, :test do
+  gem 'factory_bot_rails'
+end
 
+group :development, :test do
+  gem 'faker'
+end
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

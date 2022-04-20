@@ -1,8 +1,12 @@
 
-
 require 'rails_helper'
 
 RSpec.feature "Projects", type: :feature do
+
+  setup do
+    sign_in FactoryBot.create(:user)
+  end
+  
   context "Create new project" do
     before(:each) do
       visit new_project_path
