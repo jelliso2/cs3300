@@ -1,20 +1,23 @@
-<p id="notice"><%= notice %></p>
+<main role="main">
+<div class="jumbotron">
+<div class="container">
+  <h1 class="display-3">Josh Ellison</h1>
+  <p>I am a Junior at University of Colorado Colorado Springs(UCCS). I major in Game Design and Development with a minor in Computer Science. My targeted graduation date is May 2023. This website is a compliation of all my projects I've worked on.</p>
+  <p><a class="btn btn-primary btn-lg" href="https://github.com/jelliso2" role="button">View GitHub</a>   <a class="btn btn-primary btn-lg" href="https://www.linkedin.com/in/josh-ellison-580b8b221/" role="button">View LinkedIn</a></p>
+</div>
+</div>
+<p id="notice" style="color:red; text-size: 150%; text-align:center;"><%= notice %></p>
 
-<h1>Projects</h1>
+<h1 style="text-align: center">Projects</h1>
 
 <table>
-  <thead>
-  
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+
 
   <tbody>
-    <p class="notice"><%=notice %></p>
-    <p class="alert"><%=alert %></p>
+    <!--<p class="notice"><%=notice %></p>
+    <p class="alert"><%=alert %></p>-->
+    
+    <!--
     <% if !user_signed_in? %>
       <%= link_to "Sign-Up", new_user_registration_path %>
       <br><%= link_to "Sign-in", new_user_session_path %>
@@ -22,22 +25,25 @@
     <% if user_signed_in? %>
       <br><%= link_to "Sign-out", destroy_user_session_path, method: :delete %>
     <% end %>
-
+    -->
+    <div class="container">
+    <div class="row">
     <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.title %></td>
-        <td><%= project.description %></td>
-        <td><%= link_to 'Show', project %></td>
-        <% if user_signed_in? %>
-          <td><%= link_to 'Edit', edit_project_path(project) %></td>
-          <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <% end %>
-      </tr>
+        <div class="col-md-4" style="border: 1px solid black;">
+          <h2><%= project.title %></h2>
+          <p style="overflow: hidden;  text-overflow: ellipsis;"><%= project.description %></p>
+          <p><%= link_to 'Show', project, class:"btn btn-secondary" %></p>
+          <% if user_signed_in? %>
+            <p><%= link_to 'Edit', edit_project_path(project), class:"btn btn-secondary" %>
+            <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-secondary" %></p>
+            <% end %>
+        </div>
     <% end %>
-    
+    </div>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Project', new_project_path %>
+
+</main>
