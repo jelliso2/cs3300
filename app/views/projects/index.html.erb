@@ -31,7 +31,7 @@
     <% @projects.each do |project| %>
         <div class="col-md-4" style="border: 1px solid black;">
           <h2><%= project.title %></h2>
-          <p style="overflow: hidden;  text-overflow: ellipsis;"><%= project.description %></p>
+          <p style="overflow: hidden;  text-overflow: ellipsis; white-space: nowrap;"><%= project.description %></p>
           <p><%= link_to 'Show', project, class:"btn btn-secondary" %></p>
           <% if user_signed_in? %>
             <p><%= link_to 'Edit', edit_project_path(project), class:"btn btn-secondary" %>
